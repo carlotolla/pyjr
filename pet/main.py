@@ -4,3 +4,4 @@
 from vitollino import Cena
 # _ = document.body <= html.IMG(src="../_media/super_jogo_sp_ctl.png")
 Cena("../_media/super_jogo_sp_ctl.png").vai()
+" f"
