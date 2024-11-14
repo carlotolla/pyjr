@@ -8,7 +8,8 @@ class UmaGarrafa:
     def __init__(self):
         imagem_da_praia = "_ativo/agentes/praia.jpeg"
         mapa_praia = Planilha(imagem_da_praia, conta_lado=4.3)
-        p = Paisagem(mapa_praia.j[0]).vai()
+        p = Paisagem(mapa_praia.j[0])
+        p.vai()
 
         self.garrafa = Elemento(img="/_ativo/agentes/carta_garrafa.png", w=30, h=10,
              x=100, y=300, cena=p, o=0.5, vai=self.acha_garrafa)
@@ -27,7 +28,7 @@ class UmaGarrafa:
 
     def aparece_aghata(self, *_):
         # escreva aqui algo semelhante a acha_garrafa
-        self.aghata.x = 100
+        self.aghata.x = 350
         pass
 
 UmaGarrafa()
