@@ -2,9 +2,12 @@
 from vitollino import Cena, Texto, Jogo, Elemento
 from vitollino import Cena, Jogo, Elemento
 Jogo(style=dict(height="450px", width="600px"), did="_jogo_").z()
-a_cena = Cena("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/produto_9-2967225546.jpg?disp=inline&size=G", tela=None).vai()
-saci = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/Saci-1081199002-removebg-preview.png?disp=inline&size=G", x=100, y=350, cena=a_cena)
-homem = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/homem-de-negocios-com-ponto-de-interrogacao-na-cabeca-isolada-no-fundo-branco-86631204-1159827819-removebg-preview.png?disp=inline&size=G",  x=30, y=350, cena=a_cena)
-gorro = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/chapeu-gorro-sete-anoes-vermelho-844051709-removebg-preview.png?disp=inline&size=G",x=300, y=380, h=15, cena=a_cena)
-det = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/detetive-removebg-preview.png?disp=inline&size=G", x=300, y=350, cena=a_cena)
-
+a_cena=Cena("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/laboratorio_bancada.jpg?disp=inline&size=G").vai()
+b_cena=Cena("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/pizo_branco.jpg?disp=inline&size=G")
+npc = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/ponto_de-removebg-preview.png?disp=inline&size=G", x=10, y=180, h=200, cena=a_cena)
+det = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/detetive_mulher.png?disp=inline&size=G", x=350, y=200, h=280, cena=a_cena)
+mes = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/Mesa-em-inox-removebg-preview.png?disp=inline&size=G", x=100, y=20, h=500, w=500, cena=b_cena)
+Texto(a_cena, "Monte o experimento, para um casal de peixes utilizando a agua já tratada. ").vai()
+mesa = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/Mesa-em-inox-removebg-preview.png?disp=inline&size=G")
+a_cena.direita = b_cena.esquerda
+a_cena.direita = b_cena
