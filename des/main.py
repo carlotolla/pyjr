@@ -2,6 +2,11 @@
 from vitollino import Cena, Texto, Jogo, Elemento
 from vitollino import Cena, Jogo, Elemento, Texto
 Jogo(style=dict(height="450px", width="600px"), did="_jogo_").z()
+objetos = "escolha um objeto da mesa - A-TERMOSTATO,PEIXE,AQUARIO,LUMINARIA,RAÇÃO_AGUA. B-DETERGENTE,ALGA,ERLENMEYER. C-ALCOOL,TUBO DE ENSAIO,MICROSCOPIO"
+objeto = input(objetos)
+while objeto not in "aA":
+    objeto = input(objetos)
+input("você acertou")
 a_cena=Cena("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/laboratorio_bancada.jpg?disp=inline&size=G").vai()
 b_cena=Cena("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/pizo_branco.jpg?disp=inline&size=G")
 npc = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/ponto_de-removebg-preview.png?disp=inline&size=G", x=10, y=180, h=200, cena=a_cena)
