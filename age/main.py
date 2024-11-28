@@ -55,8 +55,8 @@ class UmaGarrafa:
         self.agente.vai = self.nada_faz
         
     def inicia(self):
-        from age.inicia import Aventura
-        Aventura()
+        from age.aventura import Inicia
+        Inicia()
         
 def main():
     UmaGarrafa()
