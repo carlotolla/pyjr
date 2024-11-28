@@ -55,7 +55,7 @@ class UmaGarrafa:
         self.agente.vai = self.nada_faz
         
 def main():
-    UmaGarrafa
+    UmaGarrafa()
 
 if __name__ == "__main__":
     UmaGarrafa()
