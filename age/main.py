@@ -51,8 +51,12 @@ class UmaGarrafa:
     def o_diagrama(self):
         dia = "É o diagrama de um relógio de sol! Temos que achar as peças!"
         mapa = Elemento("_ativo/agentes/diagrama_sol.png", texto=dia,
-                        x=4, y=160, w=290, h=290, cena=self.p)
+                        x=4, y=160, w=290, h=290, cena=self.p, foi=self.inicia)
         self.agente.vai = self.nada_faz
+        
+    def inicia(self):
+        from age.inicia import Aventura
+        Aventura()
         
 def main():
     UmaGarrafa()
