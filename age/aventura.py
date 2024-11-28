@@ -1,68 +1,30 @@
-"""Módulo age.aventura"""
+"""Módulo age.main"""
 from vitollino import Cena, Texto, Jogo, Elemento
-from cenario import Planilha, Mapa, Paisagens, Posiciona
-j = Jogo(style=dict(height="500px", width="650px"), did="_jogo_")
+from cenario import Planilha, Paisagens
+Jogo(style=dict(height="500px", width="650px"), did="_jogo_").z()
 
-class Aventura:
+class Inicia:
     def __init__(self):
-        self.da = da = "_ativo/agentes/"
-        i_c, self.i_p, i_p = "_cenas/cavernas.jpg", da+"pergaminho.png", da+"praia.jpeg"
-        c = Mapa(i_c, conta_lado=4.3)
-        self.c0, self.c1, self.c2 = c.salas[0], c.salas[1], c.salas[2]
-        p = Mapa(i_p, conta_lado=4.3)
-        self.p0, self.p1, self.p2 = p.salas[0], p.salas[1], p.salas[2]
-        self.caverna()
-
-    def caverna(self, *_):
-        self.c0.norte.vai()
-        diz = "No bilhete dizia que temos que encontrar o desenho de um homem"
-        Texto(self.c0.norte, diz).vai()
-        self.mapa = Elemento(self.i_p, x=60, y=218, h=60, w=50, o=0.3,
-                            cena=self.c2.leste, vai=self.ve_mapa)
-
+        i_praia, i_mapa = "_ativo/agentes/praia.jpeg", "_ativo/agentes/pergaminho.png"
+        mapa_praia = Planilha(i_praia, conta_lado=4.3)
+        self.p = p = Paisagens(mapa_praia.j)
+        p.norte.vai()
+        self.mapa = Elemento(i_mapa, x=200, y=350, h=20, cena=p.norte, vai=self.ve_mapa)
+        self.mapa.o, self.cena = 0.2 , p.norte
     def ve_mapa(self, *_):
-        from jogos import Swap
-        cena = self.c1.norte
-        cena.vai()
-        i_imagem = "_ativo/agentes/rupestre.jpg"
-        t = Texto(cena, "Temos que encontrar umas aves próximas do mar", foi=self.aves)
-        Swap(j, i_imagem, cena, 400, 400, 10, 10, 3, 3, venceu=t)
         m= self.mapa
-
-    def aves(self):
-        def anel(x=20, y=20, s=400, o=1):
-            m.o, m.x, m.y, m.w, m.h = o, x, y, s, s
-
-        i_a, i_s, i_g = self.da+"aves.png", self.da+"sinal.png", self.da+"graus.png"
-        self.i_s, a, b = i_s, self.p1.leste, self.p1.sul
-        self.p0.norte.vai()
-        siga = "Siga as pegadas, você vai atintir a sua 'META'"
-        pt = "Achamos uma parte do relógio de sol"
-        m = Elemento(i_g, h=20, w=20, x=-1000, y=337, o=0.2, texto=pt, foi=anel, cena=b)
-        Elemento(i_a, x=493, y=219, cena=a, texto=siga, foi=lambda:anel(512,337,20,0.2))
-        self.sinal("PRAIA ➤➤➤", self.p1.norte, self.praia)
-        self.sinal("SAMBA\nQUI➤➤", self.p1.oeste, self.sambaqui)
-        self.sinal("CAVER\nNA➤➤", self.p2.norte, self.caverna)
-        self.sinal("Templo ➤➤➤➤", self.p2.norte, self.caverna)
-    def sinal(self, texto, cena, vai):
-        pr = Elemento(self.i_s, x=10, y=319, cena=cena, vai=vai)
-        style = "font-size: 1.5em; color: saddlebrown; margin:6px; pointer-events: none;"
-        pr.elt.html = f'<h6 style="{style}">{texto}</h1>'
-    def sambaqui(self, *_):
-        self.p2.norte.vai()
-        return
-        from age.aventura import Aventura
-        Aventura()
-    def sambaqui(self, *_):
-        self.p2.norte.vai()
-        return
-        from age.aventura import Aventura
-        Aventura()
-
-    def praia(self, *_):
-        self.p2.norte.vai()
-        return
-        from age.aventura import Aventura
+        m.o, m.x, m.y, m.w, m.h = 1.0, 100, 10, 400, 400
+        self.icon(150, 50, "mountain-sun", "Aqui manda procurar uma caverna próxima", self.caverna)
+        self.icon(350, 50, "suitcase", "Existe um baú perdido na praia")
+        self.icon(150, 270, "mound", "Tem um artefato ancestral escondido em um sambaqui")
+        self.icon(350, 270, "church", "Acho que vamos encontrar algo em um templo")
+    def icon(self, x, y, ico, diz="", vai=lambda: None, cena=None):
+        cena = cena or self.cena
+        style = "font-size: 4em; color: peru;"
+        icon = Elemento("_ativo/kwarwp/vazio.png", texto=diz, x=x, y=y, cena=cena, foi=vai)
+        icon.elt.html = f'<i class="fa fa-{ico}" style="{style}"></i>'
+    def caverna(self):
+        from age.continua import Aventura
         Aventura()
 if __name__ == "__main__":
-    Aventura()         
+    Inicia()
