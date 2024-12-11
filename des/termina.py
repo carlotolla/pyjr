@@ -1,16 +1,12 @@
-"""Módulo des.termina"""
-from vitollino import Cena, Texto, Jogo, Elemento, INVENTARIO as INV
+"""Módulo des.continua"""
+from vitollino import Cena, Texto, Jogo, Elemento
 from vitollino import Cena, Jogo, Elemento
 Jogo(style=dict(height="450px", width="600px"), did="_jogo_").z()
-def fase2():
-    detfala = "Vamos investigar isso!"
-    a_cena = Cena("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/Amazonia.jpeg?disp=inline&size=G").vai()
-    Texto(a_cena, "tudo aqui é suspeito").vai()
-    det = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/detetive_sem_fundo.png?disp=inline&size=G", texto=detfala, x=30, y=350, cena=a_cena)
-    cur = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/pngtree-brazilian-folklore-festival-mythical-character-red-hair-grass-skirt-kurupira-png-image_3720896-removebg-preview.png?disp=inline&size=G",  x=300, y=230, cena=a_cena)
-    pote = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/pote_de_vidro-removebg-preview.png?disp=inline&size=G",x=100, y=300,h=70, cena=a_cena)
-    pote = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/galho-_kkkkkkkkkkkkkkkkkk-removebg-preview.png?disp=inline&size=G",x=100, y=250,h=60, cena=a_cena)
-    pote = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/pngtree-strawberry-image-on-transparent-background-png-image_4562371-1727424430-removebg-preview.png?disp=inline&size=G",x=500, y=40,h=50, cena=a_cena)
-    
-if __name__ == "__main__":
-    fase2()
+a_cena=Cena("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/super.png?disp=inline&size=G").vai()
+lix = Elemento ("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/lixeira-removebg-preview.png?disp=inline&size=G", x=100, y=350, h=80, w=65, cena=a_cena)
+med = Elemento ("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/Hidroxicloroquina_-_Portal-removebg-preview.png?disp=inline&size=G", x=40, y=400, h=50, w=50, cena=a_cena)
+det = Elemento ("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/pngtree-investigator-clipart-cartoon-detective-woman-in-a-trenchcoat-vector-png-image_6803063-removebg-preview.png?disp=inline&size=G",  x=230, y=340, h=80, w=65, cena=a_cena)
+pex = Elemento ("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/mulher_estranha-removebg-preview.png?disp=inline&size=G", x=320, y=0, h=30, w=40, cena=a_cena)
+texto = Texto(a_cena, "encontre a mulher estranha").vai()
+achou = "parabens voce encontrou ela"
+pex = Elemento (pex , x=320, y=0,  texto=achou, cena=a_cena)
