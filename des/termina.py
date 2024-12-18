@@ -9,7 +9,7 @@ deti = "https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/pngtree-investiga
 det = Elemento (deti,  x=230, y=340, h=80, w=65, cena=a_cena)
 # pex = Elemento ("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/mulher_estranha-removebg-preview.png?disp=inline&size=G", x=320, y=0, h=30, w=40, cena=a_cena)
 pexi = "https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/mulher_estranha-removebg-preview.png?disp=inline&size=G"
-achou = "parabens voce encontrou ela"
+achou = "Parabéns voce encontrou ela"
 shop = "https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/shopping.jpg?disp=inline&size=G"
 b_cena=Cena(shop)
 pex = Elemento (pexi, x=20, y=380, h=30, w=40,  texto=achou, cena=a_cena, foi=b_cena.vai)
