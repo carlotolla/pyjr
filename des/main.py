@@ -7,14 +7,18 @@ def nova():
 Jogo(style=dict(height="450px", width="600px"), did="_jogo_").z()
 a_cena = Cena("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/Amazonia.jpeg?disp=inline&size=G") #.vai()
 capa = Cena("https://i.imgur.com/vlF9laK.png").vai()
+capa.elt.style.overflow = "hidden"
 cti = "https://i.imgur.com/4SneSxN.jpeg"
 mis = "O agente designado terá que resolver os problema do descarte indevido de medicamentos"
-ct = Elemento(cti, cena=capa, x=200, y=150, w=400, h=300,texto=mis, foi=a_cena.vai)
+ct = Elemento(cti, cena=capa, x=220, y=110, w=400, h=300,
+texto=mis,style=dict(rotate="20deg"), foi=a_cena.vai)
 tx = Elemento("", cena=capa, x=50, y=220, w=550, h=400,texto=mis, foi=a_cena.vai)
 ttx="O CASO DOS MEDICAMENTOS MAL DESCARTADOS"
 agt="https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/agentes_escola.png?disp=inline&size=G"
 tx.elt.html=f'<span style="color:red;font-weight: bold;font-size:50px;font-family:times">{ttx}</span>'
-ag = Elemento(agt, cena=capa, x=10, y=10, w=200, h=200,texto=mis, foi=a_cena.vai)
+ag = Elemento(agt, cena=capa, x=20, y=10, w=200, h=200,texto=mis, foi=a_cena.vai)
+con="https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/confi.png?disp=inline&size=G"
+conf = Elemento(con, cena=capa, x=250, y=70, w=200, h=200,texto=mis, foi=a_cena.vai)
 
 carfala = "A detetive deve coletar a Água onde houve a morte dos peixes"
 det = Elemento("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/detetive_sem_fundo.png?disp=inline&size=G", x=30, y=350, cena=a_cena)
