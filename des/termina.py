@@ -1,6 +1,8 @@
 """Módulo des.continua"""
 from vitollino import Cena, Texto, Jogo, Elemento
 from vitollino import Cena, Jogo, Elemento
+def encerrado():
+    encerra.entra(b_cena)
 Jogo(style=dict(height="450px", width="600px"), did="_jogo_").z()
 a_cena=Cena("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/super.png?disp=inline&size=G").vai()
 lix = Elemento ("https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/lixeira-removebg-preview.png?disp=inline&size=G", x=100, y=350, h=80, w=65, cena=a_cena)
@@ -16,5 +18,7 @@ pex = Elemento (pexi, x=20, y=380, h=30, w=40,  texto=achou, cena=a_cena, foi=b_
 texto = Texto(a_cena, "encontre a mulher estranha").vai()
 # pex = Elemento (pex , x=320, y=0,  texto=achou, cena=a_cena)
 ganhou = "A detetive ganhou 20.000,00 por resolver os casos"
-dets = Elemento (deti, x=20, y=300, h=130, w=140,  texto=ganhou, cena=b_cena)
+dets = Elemento (deti, x=20, y=300, h=130, w=140,  texto=ganhou, cena=b_cena, foi=encerrado)
+enci = "https://activufrj.nce.ufrj.br/studio/Superpython_Jogos/caso_encerrado.png?disp=inline&size=G"
+encerra = Elemento (enci, x=20, y=10, h=300, w=500,  texto=ganhou)
 # texto = Texto(a_cena, "encontre a mulher estranha").vai()
